@@ -1,4 +1,1 @@
-# Procfile
-
-
-web: uvicorn application:app --host=0.0.0.0 --port=${PORT:-8000}
+web: gunicorn main:app --workers=4 --worker-class=uvicorn.workers.UvicornWorker
